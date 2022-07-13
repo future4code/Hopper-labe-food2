@@ -1,6 +1,11 @@
+import { Container } from "./Styles"
+
 const InitialPage = () => {
   return (
-    <div>InitialPage</div>
+    <Container>
+      <h1>Future</h1>
+      <h1>Eats</h1>
+    </Container>
   )
 }
 
