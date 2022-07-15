@@ -9,7 +9,9 @@ const InitialPage = () => {
     <Container>
       <h1>Future</h1>
       <h1>Eats</h1>
-      <button onClick={() => goToLogin(navigate)}>Login Page</button>
+      {setTimeout(() => {
+        goToLogin(navigate)
+      }, 2000)}
     </Container>
   )
 }
