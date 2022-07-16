@@ -1,16 +1,23 @@
-import { useNavigate } from "react-router-dom";
-import { goToDetails, goToFeed,  goToCart, goToProfile} from "../../router/coordinator";
+import { Container, Search } from "./Styles"
+import search from '../../assets/search.svg'
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
+import FeedCards from "../../components/FeedCards/FeedCards";
+
 
 const FeedPage = () => {
-    const navigate = useNavigate();
     return (
-      <div>
-        FeedPage
-        <button onClick={() => goToDetails(navigate/* id */)}>Detalhe restaurante</button>
-        <button onClick={() => goToFeed(navigate)}>Feed</button>
-        <button onClick={() => goToCart(navigate /* id */)}>Carrinho</button>
-        <button onClick={() => goToProfile(navigate)}>Perfil</button>
-        </div>
+      <Container>
+        <Header subTitle={'FutureEats'}/>
+        <Search>
+          <button>
+            <img src={search} alt="Ícone de busca" />
+          </button>
+          <input type="text" placeholder="Restaurante"/>
+        </Search>
+        <FeedCards />
+        <Footer />
+      </Container>
     )
   }
   
