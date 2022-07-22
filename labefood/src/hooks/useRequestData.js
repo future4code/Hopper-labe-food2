@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import api from "../config/api";
+import { useForm } from "./useForm";
 
 const useRequestedData = (endpoint, initialState) => {
   const [data, setData] = useState(initialState);
@@ -8,7 +9,6 @@ const useRequestedData = (endpoint, initialState) => {
 
   useEffect(() => {
     getData();
-    // eslint-disable-next-line
   }, [endpoint]);
 
   const getData = () => {
@@ -17,7 +17,7 @@ const useRequestedData = (endpoint, initialState) => {
       .get(`${endpoint}`)
       .then((res) => {
         setData(res.data);
-        console.log(res.data);
+
       })
       .catch((err) => {
         console.log(err.response.data.message);
