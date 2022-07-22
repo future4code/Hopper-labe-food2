@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import EditAddress from "../components/ProfileCards/EditComponents/EditAddress";
 import AddAdressPage from "../pages/AddAdressPage/AddAdressPage";
 import CartPage from "../pages/CartPage/CartPage";
 import DetailsPage from "../pages/DetailsPage/DetailsPage";
@@ -20,6 +21,7 @@ const Router = () => {
         <Route path={"/restaurants/:restaurantId"} element={<DetailsPage/>} />
         <Route path={"/restaurants/:restaurantId/order"} element={<CartPage/>} />
         <Route path={"/profile"} element={<ProfilePage/>} /> 
+        <Route path={"/editAddress"} element={<EditAddress/>} /> 
       </Routes>
     </BrowserRouter>
   )

@@ -1,18 +1,22 @@
-import { useNavigate } from "react-router-dom";
-import {  goToFeed,  goToCart, goToProfile} from "../../router/coordinator";
-
+import Footer from "../../components/Footer/Footer";
+import Header from "../../components/Header/Header";
+import CardAddress from "../../components/ProfileCards/CardAddress";
+import CardHistory from "../../components/ProfileCards/CardHistory";
+import CardProfile from "../../components/ProfileCards/CardProfile";
+import { useProtectedPage } from "../../hooks/useProtectedPage";
+import { Container } from "./Styles";
 
 const ProfilePage = () => {
-    const navigate = useNavigate();
-    return (
-      <div>
-        ProfilePage
-        <button onClick={() => goToFeed(navigate)}>Feed</button>
-        <button onClick={() => goToCart(navigate /* id */)}>Carrinho</button>
-        <button onClick={() => goToProfile(navigate)}>Perfil</button>
-        
-        </div>
-    )
-  }
-  
-  export default ProfilePage
+  useProtectedPage()
+  return (
+    <Container>
+      <Header subTitle={"Meu perfil"} />
+      <CardProfile />
+      <CardAddress/>
+      <CardHistory/>
+      <Footer />
+    </Container>
+  );
+};
+
+export default ProfilePage;
