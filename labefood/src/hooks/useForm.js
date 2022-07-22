@@ -12,7 +12,7 @@ export const useForm = (initialState) => {
     setForm(initialState);
   };
 
-  return { form, onChange, cleanFields };
+  return { form, onChange, cleanFields, setForm };
 };
 
 
