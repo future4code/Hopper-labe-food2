@@ -3,7 +3,7 @@ import { goToAddAdress } from "../../router/coordinator"
 import { useForm } from "../../hooks/useForm"
 import { BASE_URL } from "../../constants/constants"
 import axios from "axios"
-import { ButtonContainer, Container, InputsContainer } from "./Styles";
+import { Container, InputsContainer } from "./Styles";
 import TextField from "@mui/material/TextField";
 import { Button } from "@mui/material";
 
@@ -16,7 +16,7 @@ const SignUpPage = () => {
     email: "",
     cpf: "",
     password: "",
-    rep_password: ""
+    rep_password: "",
   });
 
 
@@ -42,16 +42,11 @@ const SignUpPage = () => {
         console.log(err)
       })
 
-    const submit = (event) => {
-      event.preventDefault();
-      cleanFields();
-    }
 
-
-
-
-
-
+  }
+  const Submit = (event) => {
+    event.preventDefault();
+    cleanFields();
   }
 
 
@@ -63,12 +58,14 @@ const SignUpPage = () => {
       <p>Cadastrar</p>
 
 
-      {/* <form onSubmit={submit}>
-      <TextField
-            name={"nome"}
+      <form onSubmit={SubmitSignUp} >
+        <InputsContainer>
+
+          <TextField
+            name={"Nome"}
             value={form.name}
             onChange={onChange}
-            placeholder="José da Silva"
+            placeholder="Nome e Sobrenome"
             type="text"
             fullWidth
             id="outlined-required"
@@ -76,6 +73,54 @@ const SignUpPage = () => {
             required
           />
 
+          <TextField
+            name={"E-mail"}
+            value={form.email}
+            onChange={onChange}
+            placeholder="email@email.com"
+            type="email"
+            fullWidth
+            id="outlined-required"
+            label="E-mail"
+            required
+          />
+
+          <TextField
+            name={"CPF"}
+            value={form.cpf}
+            onChange={onChange}
+            placeholder="000.000.000-00"
+            type="number"
+            fullWidth
+            id="outlined-required"
+            label="CPF"
+            required
+          />
+
+          <TextField
+            name={"Senha"}
+            value={form.password}
+            onChange={onChange}
+            placeholder="Mínimo 6 caracteres."
+            type="password"
+            fullWidth
+            id="outlined-required"
+            label="Senha"
+            required
+          />
+
+          <TextField
+            name={"Confirmar"}
+            value={form.rep_password}
+            onChange={onChange}
+            placeholder="Confirme a senha anterior."
+            type="password"
+            fullWidth
+            id="outlined-required"
+            label="Confirmar"
+            required
+          />
+        </InputsContainer>
       </form>
 
 
@@ -88,7 +133,7 @@ const SignUpPage = () => {
         color="primary"
       >
         Criar
-      </Button> */}
+      </Button>
 
 
     </Container>

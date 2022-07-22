@@ -24,6 +24,7 @@ export const Container = styled.div`
   p{
     margin-top: 2vh;
     font-size: 1rem;
+    margin-bottom: 1rem;
   }
 `;
 
@@ -34,8 +35,4 @@ export const InputsContainer = styled.div`
   max-width: 450px;
   align-items: center;
   margin-bottom: 20px;
-`
-export const ButtonContainer = styled.div`
-  width: 80vw;
-  max-width: 450px;
 `
