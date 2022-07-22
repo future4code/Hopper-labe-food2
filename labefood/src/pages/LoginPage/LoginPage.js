@@ -26,11 +26,7 @@ const LoginPage = () => {
       .then((res) => {
         localStorage.setItem("token", res.data.token);
         const hasAddress = res.data.user.hasAddress;
-        if (hasAddress === false) {
-          goToAddAdress(navigate);
-        } else {
-          goToFeed(navigate);
-        }
+        !hasAddress ? goToAddAdress(navigate) : goToFeed(navigate);
       })
       .catch((err) => {
         alert("Usuário não cadastrado.");
@@ -57,6 +53,7 @@ const LoginPage = () => {
             placeholder="email@email.com"
             type="email"
             fullWidth
+            margin={"normal"}
             id="outlined-required"
             label="E-mail"
             required
@@ -71,6 +68,7 @@ const LoginPage = () => {
             fullWidth
             id="outlined-required"
             label="Senha"
+            pattern={"^.{6,}"}
             required
           />
         </InputsContainer>
