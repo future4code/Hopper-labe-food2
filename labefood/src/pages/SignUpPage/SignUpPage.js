@@ -9,7 +9,6 @@ import { Button } from "@mui/material";
 
 
 const SignUpPage = () => {
-  const navigate = useNavigate()
 
   const { form, onChange, cleanFields } = useForm({
     name: "",
@@ -18,6 +17,7 @@ const SignUpPage = () => {
     password: "",
     rep_password: "",
   });
+  const navigate = useNavigate()
 
 
   const SubmitSignUp = () => {
@@ -26,8 +26,8 @@ const SignUpPage = () => {
       name: form.name,
       email: form.email,
       cpf: form.cpf,
-      password: form.password
-    }
+      password: form.password,
+    };
 
     axios
       .post(url, body)
@@ -39,12 +39,12 @@ const SignUpPage = () => {
       })
       .catch((err) => {
         alert("Erro ao cadastrar usuário.")
-        console.log(err)
+        console.log(err.message)
       })
 
 
   }
-  const Submit = (event) => {
+  const submit = (event) => {
     event.preventDefault();
     cleanFields();
   }
@@ -58,7 +58,7 @@ const SignUpPage = () => {
       <p>Cadastrar</p>
 
 
-      <form onSubmit={SubmitSignUp} >
+      <form onSubmit={submit} >
         <InputsContainer>
 
           <TextField
@@ -121,21 +121,15 @@ const SignUpPage = () => {
             required
           />
         </InputsContainer>
+        <Button
+          onClick={SubmitSignUp}
+          fullWidth
+          variant="contained"
+          color="primary"
+        >
+          Criar
+        </Button>
       </form>
-
-
-
-
-      <Button
-        onClick={SubmitSignUp}
-        fullWidth
-        variant="contained"
-        color="primary"
-      >
-        Criar
-      </Button>
-
-
     </Container>
   )
 }
