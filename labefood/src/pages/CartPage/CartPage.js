@@ -1,18 +1,26 @@
-import { useNavigate } from "react-router-dom";
-import { goToFeed,  goToCart, goToProfile} from "../../router/coordinator";
-
+import { Container } from "./Styles";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
+import CardAddress from "../../components/CartCards/CardAddress"
+import CardOrders from "../../components/CartCards/CardOrders";
+import CardRestaurant from "../../components/CartCards/CardRestaurant";
+import CardFrete from "../../components/CartCards/CardFrete";
+import CardPagamento from "../../components/CartCards/CardPagamento";
+import { ContainerRestaurant } from "../../components/CartCards/Styled";
 
 const CartPage = () => {
-    const navigate = useNavigate();
     return (
-      <div>
-        CartPage
-        <button onClick={() => goToFeed(navigate)}>Confirmar</button>
-        <button onClick={() => goToFeed(navigate)}>Feed</button>
-        <button onClick={() => goToCart(navigate /* id */)}>Carrinho</button>
-        <button onClick={() => goToProfile(navigate)}>Perfil</button>
-         
-        </div>
+      <Container>
+        <Header subTitle={'Meu carrinho'}/>
+        <CardAddress/>
+        {true ? 
+          <ContainerRestaurant>Carrinho Vazio</ContainerRestaurant>:
+          <CardOrders/>
+        }
+        <CardFrete/>
+        <CardPagamento/>
+        <Footer />
+      </Container>
     )
   }
   
