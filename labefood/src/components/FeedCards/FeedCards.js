@@ -13,7 +13,7 @@ const FeedCards = () => {
     <>
       {isLoading 
       ? (<Spinner />) 
-      : data && data.map(restaurant => (
+      : data.restaurants && data.restaurants.map(restaurant => (
         <CardRestaurant
           key={restaurant.id}
           onClick={() => goToDetails(navigate, restaurant.id)} 
