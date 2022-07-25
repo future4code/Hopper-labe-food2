@@ -21,7 +21,7 @@ const useGetData = (param) => {
     }
     axios.get(`${BASE_URL + param}`, headers)
     .then((res) => {
-      setData(res.data.restaurants)
+      setData(res.data)
     }).catch((err) => {
       alert(err.response.data.message)
     }).finally(() => {

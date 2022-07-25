@@ -15,10 +15,10 @@ const Pulse = keyframes`
 
 export const Loading = styled.div`
   width: 100%;
-  height: calc(100vh - 18vh);
+  height: calc(100vh - 25vh);
   display: flex;
-  margin-top: 1em;
   justify-content: center;
+  align-items: center;
   gap: 1em;
   span {
     border-radius: 50%;

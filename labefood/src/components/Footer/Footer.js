@@ -10,13 +10,11 @@ const Footer = () => {
   const navigate = useNavigate()
 
   return (
-    <>
-      <Btns>
-        <img src={house} alt='' onClick={() => goToFeed(navigate)} />
-        <img src={shopping_cart} alt='' onClick={() => goToCart(navigate)} />
-        <img src={avatar} alt='' onClick={() => goToProfile(navigate)} />
-      </Btns>
-    </>
+    <Btns>
+      <img src={house} alt='' onClick={() => goToFeed(navigate)} />
+      <img src={shopping_cart} alt='' onClick={() => goToCart(navigate)} />
+      <img src={avatar} alt='' onClick={() => goToProfile(navigate)} />
+    </Btns>
   )
 }
 
