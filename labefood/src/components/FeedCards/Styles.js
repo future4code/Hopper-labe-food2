@@ -6,6 +6,7 @@ export const CardRestaurant = styled.div`
   border: 1px solid #bbb;
   border-radius: 10px;
   margin-bottom: .5em;
+  color: #B8B8B8;
   img {
     width: 100%;
     height: 20vh;
@@ -31,4 +32,8 @@ export const CardRestaurant = styled.div`
       justify-content: space-between;
     }
   }
+`;
+
+export const Title = styled.p`
+  color: #5cb646;
 `;
