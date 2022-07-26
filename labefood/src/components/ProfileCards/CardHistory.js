@@ -3,7 +3,7 @@ import { History, Line, P } from "./Styled";
 
 const CardHistory = () => {
   const { data } = useRequestedData(`/orders/history`);
-
+console.log(data)
 
   return (
     <>
