@@ -52,7 +52,7 @@ const SignUpPage = () => {
 
   return (
     <Container>
-      {/* FALTA FAZER A PARTE DE VOLTAR COM UNDERLINE */}
+      {/* FALTA FAZER A PARTE DE RETURN */}
       <h1>Future</h1>
       <h1>Eats</h1>
       <p>Cadastrar</p>
@@ -96,7 +96,7 @@ const SignUpPage = () => {
             id="outlined-required"
             label="CPF"
             required
-            // pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" 
+            pattern="[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}"
           />
 
           <TextField
@@ -110,6 +110,7 @@ const SignUpPage = () => {
             id="outlined-required"
             label="Senha"
             required
+            Pattern="^.{6,10}$"
           />
 
           <TextField
