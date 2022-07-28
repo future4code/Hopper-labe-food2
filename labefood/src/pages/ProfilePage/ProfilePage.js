@@ -12,8 +12,6 @@ const ProfilePage = () => {
     <Container>
       <Header subTitle={"Meu perfil"} />
       <CardProfile />
-      <CardAddress/>
-      <CardHistory/>
       <Footer />
     </Container>
   );
