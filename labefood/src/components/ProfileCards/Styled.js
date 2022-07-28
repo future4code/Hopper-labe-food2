@@ -116,3 +116,32 @@ export const P = styled.p`
   text-align: center;
   margin-top: 4vh;
 `;
+
+export const InputsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90vw;
+  max-width: 450px;
+  align-items: center;
+  margin-bottom: 20px;
+`
+export const ButtonContainer = styled.div`
+  width: 90vw;
+  max-width: 450px;
+`
+export const ContainerEdit = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  img{
+    width: 23px;
+    height: 24px;
+    margin: 10px 54px 10px 16px;
+    object-fit: contain;
+    position: absolute;
+    left: 0vh;
+    top: 0.5vh;
+  }
+ 
+`
