@@ -12,11 +12,12 @@ export const Btns = styled.div`
   padding: .5em;
   img {
     width: 12%;
+    object-fit: contain;
   }
   img:nth-child(2) {
-    padding: 2px;
+    padding: 1px;
   }
   img:nth-child(3) {
-    padding: 6px;
+    padding: 4px;
   }
 `;
