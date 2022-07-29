@@ -68,19 +68,35 @@ export const Products = styled.div`
 `;
 
 export const Texts = styled.div`
-  padding: .35em;
+  width:100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   p {
-    padding: .35em;
-  }
-  p:nth-child(1) {
-    color: #5cb646;
+    padding: .5em 1em;
+    color:red;
   }
   p:nth-child(2) {
     color: #b8b8b8;
     font-size: 12px;
   }
+`;
 
+export const Item = styled.div`
+  height:33.3%;
+  display:flex;
+  justify-content:space-between;
+  p{
+    color: #5cb646;
+  }
+  button{
+    height:80%;
+    font-size:12px;
+    outline:none;
+    border:1px solid #5cb646;
+    border-top-right-radius:8px;
+    border-bottom-left-radius:8px;
+    background-color: #fff;
+    width: 15%;
+  }
 `;

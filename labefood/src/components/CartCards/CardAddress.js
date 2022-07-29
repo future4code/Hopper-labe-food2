@@ -1,5 +1,5 @@
 import useRequestedData from "../../hooks/useRequestData";
-import { ContainerAddress, Endereco, GrayFont} from "./Styled";
+import { GrayFont, ContainerAddress, Endereco } from "./Styled";
 import { useEffect } from "react";
 
 const CardAddress = () => {

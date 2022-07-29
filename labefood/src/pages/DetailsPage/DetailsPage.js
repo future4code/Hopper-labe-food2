@@ -3,7 +3,7 @@ import useGetData from "../../hooks/useGetData"
 import Header from "../../components/Header/Header"
 import Footer from "../../components/Footer/Footer"
 import Spinner from "../../components/Spinner/Spinner"
-import { 
+import {
   Container,
   Restaurant,
   Logo,
@@ -13,68 +13,76 @@ import {
   Title,
   Image,
   Products,
-  Texts
+  Texts,
+  Item
 } from "./Styles"
+import GlobalStateContext from "../../global/GlobalStateContext";
+import React, { useContext } from "react";
+import CardShopping from "../../components/DetailsCards/CardShopping";
 
 const DetailsPage = () => {
   const { id } = useParams()
   const { data, isLoading } = useGetData(`/restaurants/${id}`)
-  
+  const { states, setters, requests, functions } = useContext(GlobalStateContext)
+
   const typeProducts = data.restaurant && data.restaurant.products.map(food => {
     return food
   }).reduce((acc, food) => {
-    if(!acc[food.category]){
+    if (!acc[food.category]) {
       acc[food.category] = []
     }
     acc[food.category].push(food)
     return acc
   }, [])
-  console.log(typeProducts && Object.entries(typeProducts))
+
   return (
     <Container>
-      <Header subTitle={"Restaurante"}/>
+      <Header subTitle={"Restaurante"} />
       {isLoading
-        ? (<Spinner/>)
-        : data.restaurant &&  
-          (
-            <>
-              <Restaurant key={id}>
-                <Logo>
-                  <img src={data.restaurant.logoUrl} alt="" />
-                </Logo>
-                <Details>
-                  <h3>{data.restaurant.name}</h3>
-                  <p>{data.restaurant.category}</p>
-                  <PriceTime>
-                    <p>{data.restaurant.deliveryTime - 10} - {data.restaurant.deliveryTime} min</p>
-                    <p>Frete R${data.restaurant.shipping},00</p>
-                  </PriceTime>
-                  <p>{data.restaurant.address}</p>
-                </Details>
-              </Restaurant>
-              {typeProducts && Object.entries(typeProducts).map((type, i)=> (
-                <ContainerProducts key={i}>
-                  <Title>{type[0]}</Title>
-                  {type[1].map(products => (
-                    <Products key={products.id}>
-                      <Image>
-                        <img src={products.photoUrl} alt={`Imagem ilustrativa do ${products.name}`}/>
-                      </Image>
-                      <Texts>
+        ? (<Spinner />)
+        : data.restaurant &&
+        (
+          <>
+            <Restaurant key={id}>
+              <Logo>
+                <img src={data.restaurant.logoUrl} alt="" />
+              </Logo>
+              <Details>
+                <h3>{data.restaurant.name}</h3>
+                <p>{data.restaurant.category}</p>
+                <PriceTime>
+                  <p>{data.restaurant.deliveryTime - 10} - {data.restaurant.deliveryTime} min</p>
+                  <p>Frete R${data.restaurant.shipping},00</p>
+                </PriceTime>
+                <p>{data.restaurant.address}</p>
+              </Details>
+            </Restaurant>
+            {typeProducts && Object.entries(typeProducts).map((type, i) => (
+              <ContainerProducts key={i}>
+                <Title>{type[0]}</Title>
+                {type[1].map(products => (
+                  <Products key={products.id}>
+                    <Image>
+                      <img src={products.photoUrl} alt={`Imagem ilustrativa do ${products.name}`} />
+                    </Image>
+                    <Texts>
+                      <Item>
                         <p>{products.name}</p>
-                        <p>{products.description}</p>
-                        <p>R$ {products.price.toFixed(2).replace('.', ',')}</p>
-                      </Texts>
-                    </Products>
-                  ))}
-                </ContainerProducts>
-              ))}
-            </>
-          )
+                        <button>2</button>
+                      </Item>
+                      <p>{products.description}</p>
+                      <CardShopping products={products}/>
+                    </Texts>
+                  </Products>
+                ))}
+              </ContainerProducts>
+            ))}
+          </>
+        )
       }
       <Footer />
-    </Container>
+    </Container >
   )
 }
-  
+
 export default DetailsPage
