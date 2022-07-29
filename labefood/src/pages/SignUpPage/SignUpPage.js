@@ -22,18 +22,18 @@ const SignUpPage = () => {
 
   const SubmitSignUp = () => {
     const url = `${BASE_URL}/signup`;
+    
     const body = {
-      name: form.name,
-      email: form.email,
-      cpf: form.cpf,
-      password: form.password,
+      "name": form.name,
+      "email": form.email,
+      "cpf": form.cpf,
+      "password": form.password,
     };
 
     axios
       .post(url, body)
       .then((res) => {
-        localStorage.setItem("token", res.data.token);
-        console.log(res)
+        alert("Cadastro realizado com sucesso.")
         goToAddAdress(navigate);
 
       })
@@ -52,7 +52,7 @@ const SignUpPage = () => {
 
   return (
     <Container>
-      {/* FALTA FAZER A PARTE DE VOLTAR COM UNDERLINE */}
+      {/* FALTA FAZER A PARTE DE RETURN */}
       <h1>Future</h1>
       <h1>Eats</h1>
       <p>Cadastrar</p>
@@ -62,7 +62,7 @@ const SignUpPage = () => {
         <InputsContainer>
 
           <TextField
-            name={"Nome"}
+            name={"name"}
             value={form.name}
             onChange={onChange}
             placeholder="Nome e Sobrenome"
@@ -74,19 +74,20 @@ const SignUpPage = () => {
           />
 
           <TextField
-            name={"E-mail"}
+            name={"email"}
             value={form.email}
             onChange={onChange}
             placeholder="email@email.com"
             type="email"
             fullWidth
+            margin={"normal"}
             id="outlined-required"
             label="E-mail"
             required
           />
 
           <TextField
-            name={"CPF"}
+            name={"cpf"}
             value={form.cpf}
             onChange={onChange}
             placeholder="000.000.000-00"
@@ -95,22 +96,25 @@ const SignUpPage = () => {
             id="outlined-required"
             label="CPF"
             required
+            pattern="[0-9]{3}\.?[0-9]{3}\.?[0-9]{3}\-?[0-9]{2}"
           />
 
           <TextField
-            name={"Senha"}
+            name={"password"}
             value={form.password}
             onChange={onChange}
             placeholder="Mínimo 6 caracteres."
             type="password"
             fullWidth
+            margin={"normal"}
             id="outlined-required"
             label="Senha"
             required
+            Pattern="^.{6,10}$"
           />
 
           <TextField
-            name={"Confirmar"}
+            name={"rep_password"}
             value={form.rep_password}
             onChange={onChange}
             placeholder="Confirme a senha anterior."
