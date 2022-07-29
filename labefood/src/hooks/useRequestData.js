@@ -9,6 +9,7 @@ const useRequestedData = (endpoint, initialState) => {
 
   useEffect(() => {
     getData();
+       // eslint-disable-next-line
   }, [endpoint]);
 
   const getData = () => {
@@ -16,6 +17,7 @@ const useRequestedData = (endpoint, initialState) => {
     api
       .get(`${endpoint}`)
       .then((res) => {
+        console.log(res.data)
         setData(res.data);
       })
       .catch((err) => {

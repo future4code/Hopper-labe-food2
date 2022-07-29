@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom"
 import { goToAddAdress } from "../../router/coordinator"
 import { useForm } from "../../hooks/useForm"
-import { BASE_URL } from "../../constants/constants"
+import { BASE_URL } from "../../constants/base_URL"
 import axios from "axios"
 import { Container, InputsContainer } from "./Styles";
 import TextField from "@mui/material/TextField";
@@ -110,7 +110,7 @@ const SignUpPage = () => {
             id="outlined-required"
             label="Senha"
             required
-            Pattern="^.{6,10}$"
+            pattern="^.{6,10}$"
           />
 
           <TextField

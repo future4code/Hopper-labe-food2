@@ -8,10 +8,11 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   font-size: 1.5em;
-  text-align: left;
+  text-align: center;
   h1 {
     width: 40%;
     margin: 0;
+    text-align: left;
   }
   h1:nth-child(1) {
     color: #000;
@@ -20,6 +21,9 @@ export const Container = styled.div`
   h1:nth-child(2) {
     color: #5cb646;
     margin-top: -15px;
+  }
+  p{
+    margin-top: 3vh;
   }
 `;
 

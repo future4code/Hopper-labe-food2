@@ -1,16 +1,11 @@
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { BASE_URL } from "../../constants/constants";
+import { BASE_URL } from "../../constants/base_URL";
 import { useForm } from "../../hooks/useForm";
 import { goToFeed, goToLogin, goToSignUp } from "../../router/coordinator";
 import TextField from "@mui/material/TextField";
 import { Button } from "@mui/material";
 import { Container, InputsContainer } from "./Styles";
-
-
-
-
-
 
 const AddAdressPage = () => {
 

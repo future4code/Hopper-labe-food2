@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { goToAddAdress, goToFeed, goToSignUp } from "../../router/coordinator";
 import { useForm } from "../../hooks/useForm";
-import { BASE_URL } from "../../constants/constants";
+import { BASE_URL } from "../../constants/base_URL";
 import axios from "axios";
 import { ButtonContainer, Container, InputsContainer } from "./Styles";
 import TextField from "@mui/material/TextField";
@@ -66,7 +66,7 @@ const LoginPage = () => {
             type="password"
             margin={"normal"}
             fullWidth
-            id="outlined-required"
+            id="outlined-required-password"
             label="Senha"
             pattern={"^.{6,}"}
             required
