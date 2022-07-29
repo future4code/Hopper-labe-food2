@@ -13,7 +13,9 @@ import {
   Title,
   Image,
   Products,
-  Texts
+  Texts,
+  Item,
+  Shopping
 } from "./Styles"
 
 const DetailsPage = () => {
@@ -29,7 +31,7 @@ const DetailsPage = () => {
     acc[food.category].push(food)
     return acc
   }, [])
-  console.log(typeProducts && Object.entries(typeProducts))
+  
   return (
     <Container>
       <Header subTitle={"Restaurante"}/>
@@ -61,9 +63,15 @@ const DetailsPage = () => {
                         <img src={products.photoUrl} alt={`Imagem ilustrativa do ${products.name}`}/>
                       </Image>
                       <Texts>
-                        <p>{products.name}</p>
+                        <Item>
+                          <p>{products.name}</p>
+                          <button>2</button>
+                        </Item>
                         <p>{products.description}</p>
-                        <p>R$ {products.price.toFixed(2).replace('.', ',')}</p>
+                        <Shopping>
+                          <p>R$ {products.price.toFixed(2).replace('.', ',')}</p>
+                          <button>Adicionar</button>
+                        </Shopping>
                       </Texts>
                     </Products>
                   ))}
