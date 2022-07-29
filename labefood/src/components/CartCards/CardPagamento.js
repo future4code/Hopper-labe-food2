@@ -1,5 +1,6 @@
 
-import { FormControl, FormControlLabel, FormLabel, Radio, RadioGroup } from "@mui/material"
+import { FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, Button } from "@mui/material"
+import { primaryColor } from "../../constants/colors"
 import {ContainerSubtotal, Subtotal} from "./Styled"
 
 const CardPagamento = () => {
@@ -20,6 +21,12 @@ const CardPagamento = () => {
             <FormControlLabel value="cartao" control={<Radio />} label="Cartão de Crédito" />
             </RadioGroup>
         </FormControl>
+        <Button
+            fullWidth
+            variant="contained"
+            color="primary" 
+            > Confirmar
+        </Button>
         </div>
     )
 }

@@ -81,6 +81,7 @@ export const Texts = styled.div`
     font-size: 12px;
   }
 `;
+
 export const Item = styled.div`
   height:33.3%;
   display:flex;
@@ -97,19 +98,5 @@ export const Item = styled.div`
     border-bottom-left-radius:8px;
     background-color: #fff;
     width: 15%;
-  }
-`;
-export const Shopping = styled(Item)`
-  p{
-    color: #000;
-    font-weight:640;
-  }
-  button{
-    width:40%;
-    margin-top:0.8em;
-    border-radius:0%;
-    border-top-left-radius:8px;
-    border-bottom-right-radius: 8px;
-    float:bottom;
   }
 `;
