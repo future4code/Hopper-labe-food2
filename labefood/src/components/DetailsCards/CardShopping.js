@@ -9,12 +9,16 @@ import {
     Typography 
   } from "@mui/material";
 import { Shopping } from "./Styles";
-import React from "react";
+import React, { useContext } from "react";
+import GlobalStateContext from "../../global/GlobalStateContext";
 
 const CardShopping = (props) => {
+    const { states, setters, requests, functions } = useContext(GlobalStateContext)
     const [open, setOpen] = React.useState(false);
     const [quantity, setQuantity] = React.useState('');
-    const handleOpen = () => setOpen(true);
+    const handleOpen = () => {
+        setOpen(true)
+    }
     const handleClose = () => setOpen(false);
     const handleQuantity = (event) => {
         setQuantity(event.target.value);
@@ -69,7 +73,7 @@ const CardShopping = (props) => {
                             </Select>
                         </FormControl>
                     </Box>
-                    <Button>Adicionar ao Carrinho</Button>
+                    <Button onClick={() => functions.addProduct(props.products,props.restaurant,quantity)}>Adicionar ao Carrinho</Button>
                 </Box>
             </Modal>
 

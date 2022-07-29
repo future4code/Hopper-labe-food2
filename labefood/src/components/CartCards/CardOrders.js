@@ -10,7 +10,6 @@ import {
 
 const CardOrders = (props) => {
     const {states,setters,requests,functions} = useContext(GlobalStateContext)
-
     return (
         <div>
             <Products key={props.products.id}>
@@ -20,12 +19,12 @@ const CardOrders = (props) => {
                 <Texts>
                     <Item>
                         <p>{props.products.name}</p>
-                        <button>{props.products.amount}</button>
+                        <button>{props.products.quantity}</button>
                     </Item>
                     <p>{props.products.description}</p>
                     <Shopping>
                         <p>R$ {props.products.price.toFixed(2).replace('.', ',')}</p>
-                        <button onClick={() => functions.rmProduct(props.products.id)}>Remover</button>
+                        <button onClick={() => functions.rmProduct(props.products)}>Remover</button>
                     </Shopping>
                 </Texts>
             </Products>
