@@ -10,14 +10,13 @@ export const Btns = styled.div`
   background-color: #fff;
   border-top: 1px solid #B8B8B8;
   padding: .5em;
-  img {
-    width: 12%;
-    object-fit: contain;
-  }
-  img:nth-child(2) {
-    padding: 1px;
-  }
-  img:nth-child(3) {
-    padding: 4px;
-  }
+`;
+
+export const Icons = styled.button`
+  width: 20%;
+  object-fit: contain;
+  border: none;
+  outline: none;
+  background-color: #FFF;
+  ${({idx}) => (`&:nth-child(${idx}){svg{fill: #5CB646}}`)}
 `;
