@@ -1,19 +1,19 @@
-import { Btns } from "./Styles"
+import { Btns, Icons } from "./Styles"
 import { useNavigate } from "react-router-dom";
-import { goToFeed,  goToCart, goToProfile} from "../../router/coordinator";
-import house from '../../assets/house.svg'
-import shopping_cart from '../../assets/shopping_cart.svg'
-import avatar from '../../assets/avatar.png'
+import { goToFeed, goToCart, goToProfile} from "../../router/coordinator";
+import House from '../../assets/Housesvg'
+import Shopping_cart from '../../assets/Shopping_Cartsvg'
+import Avatar from '../../assets/Avatarsvg'
 
-const Footer = () => {
+const Footer = ({current}) => {
 
   const navigate = useNavigate()
 
   return (
     <Btns>
-      <img src={house} alt='' onClick={() => goToFeed(navigate)} />
-      <img src={shopping_cart} alt='' onClick={() => goToCart(navigate)} />
-      <img src={avatar} alt='' onClick={() => goToProfile(navigate)} />
+      <Icons onClick={() => goToFeed(navigate)} idx={current === 'Feed' && 1}><House/></Icons>
+      <Icons onClick={() => goToCart(navigate)} idx={current === 'Cart' && 2}><Shopping_cart/></Icons>
+      <Icons onClick={() => goToProfile(navigate)} idx={current === 'Profile' && 3}><Avatar/></Icons>
     </Btns>
   )
 }
