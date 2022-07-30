@@ -12,7 +12,7 @@ const ProfilePage = () => {
     <Container>
       <Header subTitle={"Meu perfil"} />
       <CardProfile />
-      <Footer />
+      <Footer current={'Profile'}/>
     </Container>
   );
 };

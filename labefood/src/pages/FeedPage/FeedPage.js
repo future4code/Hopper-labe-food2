@@ -52,7 +52,7 @@ const FeedPage = () => {
         ))}
       </Categories>
       <FeedCards text={form.search} filter={filter}/>
-      <Footer />
+      <Footer current={'Feed'}/>
     </Container>
   )
 }

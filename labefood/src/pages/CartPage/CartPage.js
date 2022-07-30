@@ -34,7 +34,7 @@ const CartPage = () => {
         }
         <CardFrete/>
         <CardPagamento/>
-        <Footer />
+        <Footer current={'Cart'}/>
       </Container>
     )
   }
