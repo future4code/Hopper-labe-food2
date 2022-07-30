@@ -19,6 +19,7 @@ const CartPage = () => {
       />
     )
   })
+  console.log(states.cart)
     return (
       <Container>
         <Header subTitle={'Meu carrinho'}/>
