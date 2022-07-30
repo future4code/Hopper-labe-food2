@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
-  margin-top: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,7 +10,7 @@ export const Container = styled.div`
   text-align: left;
   h1 {
     width: 40%;
-    margin: 0;
+    margin-top: -20px;
   }
   h1:nth-child(1) {
     color: #000;
@@ -35,4 +34,12 @@ export const InputsContainer = styled.div`
   max-width: 450px;
   align-items: center;
   margin-bottom: 20px;
+`
+
+export const HeaderBack = styled.div`
+  width: 100%;
+  border-bottom: 1px solid #B8B8B8;
+  height: 6vh;
+  margin: 2vh 0 4vh 0;
+  padding: 0 0 2vh 3vh;
 `

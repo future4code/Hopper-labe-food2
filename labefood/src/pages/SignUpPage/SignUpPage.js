@@ -1,11 +1,13 @@
 import { useNavigate } from "react-router-dom"
 import { goToAddAdress } from "../../router/coordinator"
+import { goToLogin } from "../../router/coordinator"
 import { useForm } from "../../hooks/useForm"
 import { BASE_URL } from "../../constants/constants"
 import axios from "axios"
-import { Container, InputsContainer } from "./Styles";
+import { Container, HeaderBack, InputsContainer } from "./Styles";
 import TextField from "@mui/material/TextField";
 import { Button } from "@mui/material";
+import Return from "../../assets/back.svg"
 
 
 const SignUpPage = () => {
@@ -19,10 +21,18 @@ const SignUpPage = () => {
   });
   const navigate = useNavigate()
 
+  const ClickReturn = () => {
+    goToLogin(navigate)
+  }
+
+  const ClickAlertPassword = () =>{
+    alert("As senhas digitadas não conferem.")
+  }
+
 
   const SubmitSignUp = () => {
     const url = `${BASE_URL}/signup`;
-    
+
     const body = {
       "name": form.name,
       "email": form.email,
@@ -52,7 +62,9 @@ const SignUpPage = () => {
 
   return (
     <Container>
-      {/* FALTA FAZER A PARTE DE RETURN */}
+      <HeaderBack>
+        <img onClick={ClickReturn} src={Return} alt="back"></img>
+      </HeaderBack>
       <h1>Future</h1>
       <h1>Eats</h1>
       <p>Cadastrar</p>
@@ -125,14 +137,28 @@ const SignUpPage = () => {
             required
           />
         </InputsContainer>
-        <Button
-          onClick={SubmitSignUp}
-          fullWidth
-          variant="contained"
-          color="primary"
-        >
-          Criar
-        </Button>
+
+        {form.rep_password === form.password ?
+          (<Button
+            onClick={SubmitSignUp}
+            fullWidth
+            variant="contained"
+            color="primary"
+            type="submit"
+          >
+            Criar
+          </Button>) : 
+           (<Button
+              onClick={ClickAlertPassword}
+              fullWidth
+              variant="contained"
+              color="primary"
+              type="submit"
+            >
+              Criar
+            </Button>) }
+
+
       </form>
     </Container>
   )

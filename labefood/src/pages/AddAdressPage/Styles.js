@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Container = styled.div`
   width: 100%;
   height: 100vh;
-  margin-top: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,4 +34,12 @@ export const InputsContainer = styled.div`
   max-width: 450px;
   align-items: center;
   margin-bottom: 20px;
+`
+
+export const HeaderBack = styled.div`
+  width: 100%;
+  border-bottom: 1px solid #B8B8B8;
+  height: 6vh;
+  margin: 2vh 0 3vh 0;
+  padding: 0 0 2vh 3vh;
 `
