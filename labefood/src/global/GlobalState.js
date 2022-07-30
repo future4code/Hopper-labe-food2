@@ -16,19 +16,27 @@ const GlobalState = (props) => {
     }
 
     //Adicionar Produto ao Carrinho e Atualiza Informações do Restaurante
-    const addProduct = (product,restaurant) => {
-        const newCart = [...cart, product]
+    const addProduct = (product,restaurant,quantidade) => {
+        const newProduct = {...product, quantity: quantidade}
+        const newCart = [...cart, newProduct]
         setCart(newCart)
+
         const newInfoRestaurant = restaurant
         setInfoRestaurant(newInfoRestaurant)
+
+        const newSubtotal = subtotal + (product.price*quantidade)
+        setSubtotal(newSubtotal)
     }
 
     //Remover Produto do Carrinho
-    const rmProduct = (Id) => {
+    const rmProduct = (product) => {
         const newCart = cart.filter((item) => {
-            return item.id !== Id
+            return item.id !== product.id
         })
         setCart(newCart)
+
+        const newSubtotal = subtotal - (product.price*product.quantity)
+        setSubtotal(newSubtotal)
     }
 
     //Informações

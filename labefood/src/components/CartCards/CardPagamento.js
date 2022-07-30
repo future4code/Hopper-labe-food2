@@ -1,14 +1,16 @@
 
 import { FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, Button } from "@mui/material"
-import { primaryColor } from "../../constants/colors"
+import { useContext } from "react"
+import GlobalStateContext from "../../global/GlobalStateContext"
 import {ContainerSubtotal, Subtotal} from "./Styled"
 
 const CardPagamento = () => {
+    const { states, setters, requests, functions } = useContext(GlobalStateContext)
     return(
         <div>
         <ContainerSubtotal>
             <p>SUBTOTAL:</p>
-            <Subtotal>R$ 00,00</Subtotal>
+            <Subtotal>R$ {states.subtotal + states.infoRestaurant.shipping},00</Subtotal>
         </ContainerSubtotal>
         <FormControl>
             <FormLabel id="demo-radio-buttons-group-label">Forma de Pagamento</FormLabel>
