@@ -4,7 +4,6 @@ import GlobalStateContext from "../../global/GlobalStateContext";
 
 const CardRestaurant = () => {
     const {states,setters,requests,functions} = useContext(GlobalStateContext)
-    console.log(states.infoRestaurant)
     return(
         <ContainerRestaurant>
             <GreenFont>{states.infoRestaurant.name}</GreenFont>

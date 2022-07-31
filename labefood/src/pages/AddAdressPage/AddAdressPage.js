@@ -5,7 +5,8 @@ import { useForm } from "../../hooks/useForm";
 import { goToFeed, goToLogin, goToSignUp } from "../../router/coordinator";
 import TextField from "@mui/material/TextField";
 import { Button } from "@mui/material";
-import { Container, InputsContainer } from "./Styles";
+import { Container, InputsContainer, HeaderBack } from "./Styles";
+import Return from "../../assets/back.svg"
 
 const AddAdressPage = () => {
 
@@ -18,6 +19,10 @@ const AddAdressPage = () => {
     complement: ""
   })
   const navigate = useNavigate();
+
+  const ClickReturn = () => {
+    goToLogin(navigate)
+  }
 
 
 
@@ -59,81 +64,84 @@ const AddAdressPage = () => {
 
   return (
     <Container>
-      {/* FALTA FAZER A PARTE DE RETURN */}
+      <HeaderBack>
+        <img onClick={ClickReturn} src={Return} alt="back"></img>
+      </HeaderBack>
       <p>Meu endereço</p>
 
       <form onSubmit={submit}>
 
         <InputsContainer>
-        
-        <TextField
-          name={"street"}
-          value={form.street}
-          onChange={onChange}
-          fullWidth
-          margin={"normal"}
-          id="outlined-required"
-          label="Logradouro"
-          required
-        />
-        <TextField
-          name={"number"}
-          value={form.number}
-          onChange={onChange}
-          type="number"
-          fullWidth
-          margin={"normal"}
-          id="outlined-required"
-          label="Número"
-          required
-        />
-        <TextField
-          name={"complement"}
-          value={form.complement}
-          onChange={onChange}
-          fullWidth
-          margin={"normal"}
-          id="outlined"
-          label="Complemento"
-        />
-        <TextField
-          name={"neighbourhood"}
-          value={form.neighbourhood}
-          onChange={onChange}
-          fullWidth
-          margin={"normal"}
-          id="outlined-required"
-          label="Bairro"
-          required
-        />
-        <TextField
-          name={"city"}
-          value={form.city}
-          onChange={onChange}
-          fullWidth
-          margin={"normal"}
-          id="outlined-required"
-          label="Cidade"
-          required
-        />
-        <TextField
-          name={"state"}
-          value={form.state}
-          onChange={onChange}
-          fullWidth
-          margin={"normal"}
-          id="outlined-required"
-          label="Estado"
-          required
-        />
+
+          <TextField
+            name={"street"}
+            value={form.street}
+            onChange={onChange}
+            fullWidth
+            margin={"none"}
+            id="outlined-required"
+            label="Logradouro"
+            required
+          />
+          <TextField
+            name={"number"}
+            value={form.number}
+            onChange={onChange}
+            type="number"
+            fullWidth
+            margin={"normal"}
+            id="outlined-required"
+            label="Número"
+            required
+          />
+          <TextField
+            name={"complement"}
+            value={form.complement}
+            onChange={onChange}
+            fullWidth
+            margin={"none"}
+            id="outlined"
+            label="Complemento"
+          />
+          <TextField
+            name={"neighbourhood"}
+            value={form.neighbourhood}
+            onChange={onChange}
+            fullWidth
+            margin={"dense"}
+            id="outlined-required"
+            label="Bairro"
+            required
+          />
+          <TextField
+            name={"city"}
+            value={form.city}
+            onChange={onChange}
+            fullWidth
+            margin={"dense"}
+            id="outlined-required"
+            label="Cidade"
+            required
+          />
+          <TextField
+            name={"state"}
+            value={form.state}
+            onChange={onChange}
+            fullWidth
+            margin={"dense"}
+            id="outlined-required"
+            label="Estado"
+            required
+          />
         </InputsContainer>
-        
+
 
         <Button
           onClick={SubmitAddAdress}
           fullWidth
           variant="contained"
           color="primary"
+          type="submit"
         >
           Salvar
         </Button>

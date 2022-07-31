@@ -71,7 +71,10 @@ const DetailsPage = () => {
                         <button>2</button>
                       </Item>
                       <p>{products.description}</p>
-                      <CardShopping products={products}/>
+                      <CardShopping 
+                        products={products}
+                        restaurant={data.restaurant}
+                      />
                     </Texts>
                   </Products>
                 ))}

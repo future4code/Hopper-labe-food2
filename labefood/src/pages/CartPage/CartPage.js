@@ -19,6 +19,7 @@ const CartPage = () => {
       />
     )
   })
+  console.log(states.cart)
     return (
       <Container>
         <Header subTitle={'Meu carrinho'}/>
@@ -33,7 +34,7 @@ const CartPage = () => {
         }
         <CardFrete/>
         <CardPagamento/>
-        <Footer />
+        <Footer current={'Cart'}/>
       </Container>
     )
   }

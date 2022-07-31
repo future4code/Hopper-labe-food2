@@ -11,7 +11,6 @@ const FeedCards = ({text, filter}) => {
   const search = text
   const category = filter
   
-  console.log(category)
   return (
     <>
       {isLoading 
