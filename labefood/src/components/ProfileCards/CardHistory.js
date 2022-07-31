@@ -30,7 +30,7 @@ const CardHistory = () => {
       const month = new Date(ped.createdAt).getMonth()
       const year = new Date(ped.createdAt).getFullYear()
       const date =  day + ' ' + monthNames[month] + ' ' + year;
-      return date[0]
+      return date
     })
   
   console.log(dataCreatedAt);
@@ -53,7 +53,7 @@ const CardHistory = () => {
                   {pedido.restaurantName}
                 </Typography>
                 <Typography sx={{ fontSize: 14 }} color="black" gutterBottom>
-                  {dataCreatedAt }
+                  {dataCreatedAt[index]}
                 </Typography>
                 <Typography variant="h6" sx={{ fontWeight: 700, mb: -1.5 }}>
                   SUBTOTAL R$ {pedido.totalPrice}
