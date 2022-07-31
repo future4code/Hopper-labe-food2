@@ -17,7 +17,6 @@ const useRequestedData = (endpoint, initialState) => {
     api
       .get(`${endpoint}`)
       .then((res) => {
-        console.log(res.data)
         setData(res.data);
       })
       .catch((err) => {
