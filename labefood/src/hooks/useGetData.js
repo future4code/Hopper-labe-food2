@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { BASE_URL } from "../constants/constants";
+import { BASE_URL } from "../constants/base_URL";
 import axios from "axios";
 
 const useGetData = (param) => {
