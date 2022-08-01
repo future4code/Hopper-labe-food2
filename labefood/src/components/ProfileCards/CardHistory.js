@@ -7,7 +7,6 @@ import CardContent from "@mui/material/CardContent";
 const CardHistory = () => {
   const { data } = useRequestedData(`/orders/history`);
 
-  console.log(data)
   const monthNames = [
     "Janeiro",
     "Fevereiro",
@@ -32,9 +31,6 @@ const CardHistory = () => {
       const date =  day + ' ' + monthNames[month] + ' ' + year;
       return date
     })
-  
-  console.log(dataCreatedAt);
- 
 
   return (
     <>

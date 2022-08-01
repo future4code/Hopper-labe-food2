@@ -78,6 +78,7 @@ const LoginPage = () => {
             fullWidth
             variant="contained"
             color="primary"
+            type="submit"
           >
             Entrar
           </Button>
