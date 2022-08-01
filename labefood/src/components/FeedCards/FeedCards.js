@@ -1,13 +1,13 @@
-import useGetData from "../../hooks/useGetData";
 import { CardRestaurant, Title } from "./Styles"
 import { goToDetails } from "../../router/coordinator";
 import { useNavigate } from "react-router-dom";
 import Spinner from "../Spinner/Spinner";
+import useRequestedData from "../../hooks/useRequestData";
 
 const FeedCards = ({text, filter}) => {
 
   const navigate = useNavigate()
-  const { data, isLoading } = useGetData('/restaurants')
+  const { data, isLoading } = useRequestedData('/restaurants')
   const search = text
   const category = filter
   

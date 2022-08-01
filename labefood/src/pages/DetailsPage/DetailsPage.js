@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom";
-import useGetData from "../../hooks/useGetData"
 import Header from "../../components/Header/Header"
 import Footer from "../../components/Footer/Footer"
 import Spinner from "../../components/Spinner/Spinner"
@@ -17,10 +16,15 @@ import {
   Item
 } from "./Styles"
 import CardShopping from "../../components/DetailsCards/CardShopping";
+import { useProtectedPage } from "../../hooks/useProtectedPage";
+import useRequestedData from "../../hooks/useRequestData";
 
-const DetailsPage = (props) => {
+const DetailsPage = () => {
+
+  useProtectedPage()
+
   const { id } = useParams()
-  const { data, isLoading } = useGetData(`/restaurants/${id}`)
+  const { data, isLoading } = useRequestedData(`/restaurants/${id}`, [])
 
   const typeProducts = data.restaurant && data.restaurant.products.map(food => {
     return food

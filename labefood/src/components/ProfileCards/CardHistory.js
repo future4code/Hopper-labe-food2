@@ -52,7 +52,7 @@ const CardHistory = () => {
                   {dataCreatedAt[index]}
                 </Typography>
                 <Typography variant="h6" sx={{ fontWeight: 700, mb: -1.5 }}>
-                  SUBTOTAL R$ {pedido.totalPrice}
+                  SUBTOTAL R$ {(pedido.totalPrice).toFixed(2).replace('.', ',')}
                 </Typography>
               </CardContent>
             </Card>

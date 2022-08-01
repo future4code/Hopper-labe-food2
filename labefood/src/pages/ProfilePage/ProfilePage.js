@@ -5,7 +5,9 @@ import { useProtectedPage } from "../../hooks/useProtectedPage";
 import { Container } from "./Styles";
 
 const ProfilePage = () => {
+
   useProtectedPage()
+  
   return (
     <Container>
       <Header subTitle={"Meu perfil"} />

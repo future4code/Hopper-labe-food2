@@ -9,8 +9,12 @@ import { ContainerRestaurant } from "../../components/CartCards/Styled";
 import GlobalStateContext from "../../global/GlobalStateContext";
 import { useContext } from "react";
 import CardRestaurant from "../../components/CartCards/CardRestaurant";
+import { useProtectedPage } from "../../hooks/useProtectedPage";
 
 const CartPage = () => {
+
+  useProtectedPage()
+
   const { states } = useContext(GlobalStateContext)
   const ordersRender = states.cart.map((item, index) => {
     return (
