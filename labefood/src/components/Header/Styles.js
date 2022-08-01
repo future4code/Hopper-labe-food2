@@ -16,6 +16,7 @@ export const Container = styled.div`
   h2 {
     font-size: 1em;
     width: 1%;
+    white-space: nowrap;
     margin: 0 auto;
   }
 `;

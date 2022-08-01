@@ -49,6 +49,7 @@ const AddAdressPage = () => {
       .then((res) => {
         alert("Endereço cadastrado com sucesso.")
         goToFeed(navigate);
+        localStorage.setItem("token", res.data.token )
       })
       .catch((err) => {
         alert("Não foi possível cadastrar o endereço.")
