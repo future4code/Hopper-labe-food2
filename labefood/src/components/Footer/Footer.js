@@ -13,10 +13,10 @@ const Footer = ({current}) => {
   const navigate = useNavigate()
 
   const { data } = useRequestData(BASE_URL + "/active-order", [])
-  console.log(data)
+  
   return (
     <Container>
-      {data && data.order !== null
+      {data && data.order && data.order !== null
       ? <Order disp={'flex'}>
           <IMG>
             <img src={Clock} alt="Ícone de timer" />
