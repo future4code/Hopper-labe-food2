@@ -74,7 +74,7 @@ export const Texts = styled.div`
   justify-content: space-between;
   p {
     padding: .5em 1em;
-    color:red;
+    color:black;
   }
   p:nth-child(2) {
     color: #b8b8b8;
@@ -88,15 +88,5 @@ export const Item = styled.div`
   justify-content:space-between;
   p{
     color: #5cb646;
-  }
-  button{
-    height:80%;
-    font-size:12px;
-    outline:none;
-    border:1px solid #5cb646;
-    border-top-right-radius:8px;
-    border-bottom-left-radius:8px;
-    background-color: #fff;
-    width: 15%;
   }
 `;

@@ -6,13 +6,23 @@ import axios from "axios";
 import { ButtonContainer, Container, InputsContainer } from "./Styles";
 import TextField from "@mui/material/TextField";
 import { Button } from "@mui/material";
+import { useEffect } from "react";
 
 const LoginPage = () => {
+
+  const navigate = useNavigate();
+  
+  useEffect(() => {
+    if(localStorage.getItem('token')){
+      goToFeed(navigate)
+    }
+    // eslint-disable-next-line
+  }, [])
+
   const { form, onChange, cleanFields } = useForm({
     email: "",
     password: "",
   });
-  const navigate = useNavigate();
 
   const submitLogin = () => {
     const url = `${BASE_URL}/login`;

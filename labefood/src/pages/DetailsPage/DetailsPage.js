@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom";
-import useGetData from "../../hooks/useGetData"
 import Header from "../../components/Header/Header"
 import Footer from "../../components/Footer/Footer"
 import Spinner from "../../components/Spinner/Spinner"
@@ -16,14 +15,16 @@ import {
   Texts,
   Item
 } from "./Styles"
-import GlobalStateContext from "../../global/GlobalStateContext";
-import React, { useContext } from "react";
 import CardShopping from "../../components/DetailsCards/CardShopping";
+import { useProtectedPage } from "../../hooks/useProtectedPage";
+import useRequestedData from "../../hooks/useRequestData";
 
 const DetailsPage = () => {
+
+  useProtectedPage()
+
   const { id } = useParams()
-  const { data, isLoading } = useGetData(`/restaurants/${id}`)
-  const { states, setters, requests, functions } = useContext(GlobalStateContext)
+  const { data, isLoading } = useRequestedData(`/restaurants/${id}`, [])
 
   const typeProducts = data.restaurant && data.restaurant.products.map(food => {
     return food
@@ -68,7 +69,6 @@ const DetailsPage = () => {
                     <Texts>
                       <Item>
                         <p>{products.name}</p>
-                        <button>2</button>
                       </Item>
                       <p>{products.description}</p>
                       <CardShopping 

@@ -1,7 +1,7 @@
 
 import { FormControl, FormControlLabel, FormLabel, Radio, RadioGroup, Button } from "@mui/material"
 import axios from "axios"
-import { useContext, useEffect, useState } from "react"
+import { useContext, useState } from "react"
 import { BASE_URL } from "../../constants/base_URL"
 import GlobalStateContext from "../../global/GlobalStateContext"
 import { ContainerSubtotal, Subtotal } from "./Styled"
@@ -9,7 +9,9 @@ import { ContainerSubtotal, Subtotal } from "./Styled"
 const CardPagamento = () => {
     const [data, setData] = useState([])
     const [isLoading, setIsLoading] = useState(false)
-    const { states, setters, requests, functions } = useContext(GlobalStateContext)
+    const { states, setters } = useContext(GlobalStateContext)
+    const [ payment, setPayment ] = useState('money')
+    
     let products = states.cart.map((product) => {
         return {
             id: product.id,
@@ -18,12 +20,10 @@ const CardPagamento = () => {
     })
     const body = {
         products,
-        paymentMethod: "creditcard"
+        paymentMethod: payment
     }
     const id = states.infoRestaurant.id
 
-    console.log(body)
-    
     const enviarPedido = (param) => {
         setIsLoading(true)
         const headers = {
@@ -34,6 +34,8 @@ const CardPagamento = () => {
         axios.post(`${BASE_URL + param}`, body , headers)
             .then((res) => {
                 setData(res.data)
+                console.log(res.data)
+                setters.setCart([])
             }).catch((err) => {
                 alert(err.response.data.message)
             }).finally(() => {
@@ -47,7 +49,9 @@ const CardPagamento = () => {
         <div>
             <ContainerSubtotal>
                 <p>SUBTOTAL:</p>
-                <Subtotal>R$ {states.subtotal + states.infoRestaurant.shipping}</Subtotal>
+                <Subtotal>
+                    R$ {states.infoRestaurant.shipping === undefined ? Number(0).toFixed(2).replace('.', ',') : (states.subtotal + states.infoRestaurant.shipping).toFixed(2).replace('.', ',')}
+                </Subtotal>
             </ContainerSubtotal>
             <FormControl>
                 <FormLabel id="demo-radio-buttons-group-label">Forma de Pagamento</FormLabel>
@@ -56,8 +60,8 @@ const CardPagamento = () => {
                     defaultValue="dinheiro"
                     name="radio-buttons-group"
                 >
-                    <FormControlLabel value="dinheiro" control={<Radio />} label="Dinheiro" />
-                    <FormControlLabel value="cartao" control={<Radio />} label="Cartão de Crédito" />
+                    <FormControlLabel onClick={() => setPayment('money')} value="dinheiro" control={<Radio />} label="Dinheiro" />
+                    <FormControlLabel onClick={() => setPayment('creditcard')} value="cartao" control={<Radio />} label="Cartão de Crédito" />
                 </RadioGroup>
             </FormControl>
             <Button
