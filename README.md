@@ -23,7 +23,7 @@
 
 ## Link da Aplicação
 
-- [x] [Surge Link](https://squeamish-show.surge.sh) 🚀
+- [x] [Surge Link](https://illegal-development.surge.sh/) 🚀
 
 ## Integrantes do grupo:
 
