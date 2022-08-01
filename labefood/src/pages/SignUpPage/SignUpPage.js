@@ -43,6 +43,8 @@ const SignUpPage = () => {
     axios
       .post(url, body)
       .then((res) => {
+        localStorage.setItem("token", res.data.token);
+        console.log(res.data.token)
         alert("Cadastro realizado com sucesso.")
         goToAddAdress(navigate);
 
