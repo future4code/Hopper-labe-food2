@@ -11,10 +11,11 @@ import { useContext } from "react";
 import CardRestaurant from "../../components/CartCards/CardRestaurant";
 
 const CartPage = () => {
-  const {states,setters,requests,functions} = useContext(GlobalStateContext)
-  const ordersRender = states.cart.map((item) => {
+  const { states } = useContext(GlobalStateContext)
+  const ordersRender = states.cart.map((item, index) => {
     return (
       <CardOrders
+        key={index}
         products={item}
       />
     )

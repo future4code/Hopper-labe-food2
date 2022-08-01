@@ -13,7 +13,7 @@ import React, { useContext } from "react";
 import GlobalStateContext from "../../global/GlobalStateContext";
 
 const CardShopping = (props) => {
-    const { states, setters, requests, functions } = useContext(GlobalStateContext)
+    const { functions } = useContext(GlobalStateContext)
     const [open, setOpen] = React.useState(false);
     const [quantity, setQuantity] = React.useState('');
     const handleOpen = () => setOpen(true);
@@ -32,6 +32,11 @@ const CardShopping = (props) => {
 
         p: 4,
     };
+
+    const addItens = () => {
+        functions.addProduct(props.products, props.restaurant, quantity)
+        setOpen(false)
+    }
 
     return (
         <Shopping>
@@ -71,9 +76,8 @@ const CardShopping = (props) => {
                             </Select>
                         </FormControl>
                     </Box>
-                    <Button onClick={
-                        () => functions.addProduct(props.products,props.restaurant,quantity)
-                        }>Adicionar ao Carrinho
+                    <Button onClick={addItens}>
+                        Adicionar ao Carrinho
                     </Button>
                 </Box>
             </Modal>

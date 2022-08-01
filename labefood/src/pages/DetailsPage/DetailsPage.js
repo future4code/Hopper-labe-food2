@@ -16,14 +16,11 @@ import {
   Texts,
   Item
 } from "./Styles"
-import GlobalStateContext from "../../global/GlobalStateContext";
-import React, { useContext } from "react";
 import CardShopping from "../../components/DetailsCards/CardShopping";
 
-const DetailsPage = () => {
+const DetailsPage = (props) => {
   const { id } = useParams()
   const { data, isLoading } = useGetData(`/restaurants/${id}`)
-  const { states, setters, requests, functions } = useContext(GlobalStateContext)
 
   const typeProducts = data.restaurant && data.restaurant.products.map(food => {
     return food
@@ -68,7 +65,6 @@ const DetailsPage = () => {
                     <Texts>
                       <Item>
                         <p>{products.name}</p>
-                        <button>2</button>
                       </Item>
                       <p>{products.description}</p>
                       <CardShopping 

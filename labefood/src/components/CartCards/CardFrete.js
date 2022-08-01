@@ -3,7 +3,7 @@ import GlobalStateContext from "../../global/GlobalStateContext"
 import { ContainerFrete } from "./Styled"
 
 const CardFrete = () => {
-    const {states,setters,requests,functions} = useContext(GlobalStateContext)
+    const {states} = useContext(GlobalStateContext)
     return(
         <ContainerFrete>Frete: R$ {states.infoRestaurant.shipping},00</ContainerFrete>
     )

@@ -16,15 +16,28 @@ const GlobalState = (props) => {
     }
 
     //Adicionar Produto ao Carrinho e Atualiza Informações do Restaurante
-    const addProduct = (product,restaurant,quantidade) => {
-        const newProduct = {...product, quantity: quantidade}
-        const newCart = [...cart, newProduct]
-        setCart(newCart)
-
+    const addProduct = (product, restaurant, quantidade) => {
+        const saveProduct = cart.find(item => product.id === item.id)
+        if (saveProduct) {
+            const newCart = cart.map(item => {
+                if(product.id === item.id) {
+                    return {
+                        ...item, quantity: quantidade + item.quantity
+                    }
+                }
+                return item
+            })
+            setCart(newCart)
+        } else {
+            const newProduct = {...product, quantity: quantidade}
+            const newCart = [...cart, newProduct]
+            setCart(newCart)
+        }
+        
         const newInfoRestaurant = restaurant
         setInfoRestaurant(newInfoRestaurant)
 
-        const newSubtotal = subtotal + (product.price*quantidade)
+        const newSubtotal = subtotal + (product.price * quantidade)
         setSubtotal(newSubtotal)
     }
 
@@ -35,7 +48,7 @@ const GlobalState = (props) => {
         })
         setCart(newCart)
 
-        const newSubtotal = subtotal - (product.price*product.quantity)
+        const newSubtotal = subtotal - (product.price * product.quantity)
         setSubtotal(newSubtotal)
     }
 
