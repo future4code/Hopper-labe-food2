@@ -1,10 +1,21 @@
 import styled from "styled-components";
 
-export const H2 = styled.h2`
-  padding: 1em 0;
-  height: 8vh;
-  font-size: 1em;
-  width: 100%;
-  text-align: center;
+export const Container = styled.div`
+  display: flex;
   border-bottom: 1px solid #00000025;
-`
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1em 0;
+  p {
+    font-weight: bold;
+    font-weight: 600;
+    color: #5cb646;
+    width: 20%;
+  }
+  h2 {
+    font-size: 1em;
+    width: 1%;
+    margin: 0 auto;
+  }
+`;
