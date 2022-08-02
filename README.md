@@ -33,3 +33,10 @@
 - [Giovana Martinho](https://github.com/Giovana-MS)
 - [Lucía Cufré](https://github.com/lucia-cufre)
 - [Pedro Paulo](https://github.com/ppssjr)
+
+## Imagens: 
+![image](https://user-images.githubusercontent.com/98095327/182414528-ab4d45ba-5042-4c32-aef7-66b68a654aef.png)
+![image](https://user-images.githubusercontent.com/98095327/182415481-9b7500a8-cc5a-4a80-bb7e-4b1f2aeeeb8b.png)
+![image](https://user-images.githubusercontent.com/98095327/182417541-5b438a9e-cc53-4b37-bba4-f655cac5e3b0.png)
+![image](https://user-images.githubusercontent.com/98095327/182417348-4b81a2f5-57fb-4135-b46a-3aeaa9777a24.png)
+
