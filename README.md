@@ -21,7 +21,7 @@
 - Conclusão de pedido
 - Edição de perfil ná área Profile
 
-## Link da Aplicação: [Surge Link](https://illegal-development.surge.sh/) 🚀
+## Link da Aplicação: [Surge Link](https://pathetic-park.surge.sh/) 🚀
 
 - Login: labefood@futureeats2.com
 - Password: 123456
