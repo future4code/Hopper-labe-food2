@@ -1,5 +1,5 @@
 import useRequestedData from "../../hooks/useRequestData";
-import { Cpf, Email, Img1, Name } from "./Styled";
+import { Container, Cpf, Email, Img1, Name } from "./Styled";
 import Spinner from "../Spinner/Spinner";
 import Edit from "../../assets/edit.svg";
 import CardAddress from "./CardAddress";
@@ -13,7 +13,7 @@ const CardProfile = () => {
     navigate("/editProfile");
   };
   return (
-    <>
+    <Container>
       {isLoading ? (
         <Spinner />
       ) : (
@@ -33,7 +33,7 @@ const CardProfile = () => {
           </div>
         )
       )}
-    </>
+    </Container>
   );
 };
 

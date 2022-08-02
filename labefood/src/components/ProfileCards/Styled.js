@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const Container = styled.div`
+  padding-bottom: 10vh;
+`;
+
 export const Name = styled.p`
   width: 328px;
   height: 18px;
