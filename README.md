@@ -25,6 +25,9 @@
 
 - [x] [Surge Link](https://illegal-development.surge.sh/) 🚀
 
+- Login: labefood@futureeats2.com
+- Password: 123456
+
 ## Integrantes do grupo:
 
 - [Gabriel Cândido](https://github.com/GCandid07)
